@@ -46,6 +46,7 @@
     <a href="javascript:;" class="Toast" onclick="showSystemWindow(2);">调用Toast</a></br>
     <a href="javascript:;" class="alert" onclick="showSystemWindow(0);">调用alert</a></br>
     <a href="javascript:;" class="actionSheet" onclick="showSystemWindow(1);">调用actionSheet</a></br>
+    <a href="javascript:;" class="gotoCapture" onclick="gotoCapture();">扫码</a></br>
 
 
 
@@ -230,6 +231,11 @@
                                        });
 	}
     
+	function gotoCapture() {
+	connectWebViewJavascriptBridge(function(bridge){
+                            		bridge.gotoCapture();
+                                       });
+	}
 	window.onload = function(){
 		var wxData = {};
 	connectWebViewJavascriptBridge(function(bridge){
