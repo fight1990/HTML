@@ -47,6 +47,7 @@
     <a href="javascript:;" class="alert" onclick="showSystemWindow(0);">调用alert</a></br>
     <a href="javascript:;" class="actionSheet" onclick="showSystemWindow(1);">调用actionSheet</a></br>
     <a href="javascript:;" class="gotoCapture" onclick="gotoCapture();">扫码</a></br>
+    <a href="javascript:;" class="gotoRenZheng" onclick="gotoRenZheng();">认证</a></br>
 
 
 
@@ -236,12 +237,19 @@
                             		bridge.gotoCapture();
                                        });
 	}
-	window.onload = function(){
-		var wxData = {};
+	function gotoRenZheng() {
+	var data = {};
+        data.refresh = true;
 	connectWebViewJavascriptBridge(function(bridge){
-                            		wxData = bridge.getWxData();
+                            		bridge.gotoRenZhen(JSON.stringify(data));
                                        });
-		alert("1111"+JSON.stringify(wxData));
+	}
+	window.onload = function(){
+// 		var wxData = {};
+// 	connectWebViewJavascriptBridge(function(bridge){
+//                             		wxData = bridge.getWxData();
+//                                        });
+// 		alert("1111"+JSON.stringify(wxData));
 	}
 	</script>
 	<script type="text/javascript" src="App.linkExp.js"></script>
