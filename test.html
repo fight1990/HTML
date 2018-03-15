@@ -249,7 +249,10 @@
 	}
 		
 	function setCaptureResult(result) {
-	alert("扫码结果：" + result);
+	
+	connectWebViewJavascriptBridge(function(bridge){
+				bridge.showToast("扫码结果: "+result);
+			       });
 	}
 	window.onload = function(){
 // 		var wxData = {};
