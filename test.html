@@ -46,7 +46,8 @@
     <a href="javascript:;" class="Toast" onclick="showSystemWindow(2);">调用Toast</a></br>
     <a href="javascript:;" class="alert" onclick="showSystemWindow(0);">调用alert</a></br>
     <a href="javascript:;" class="actionSheet" onclick="showSystemWindow(1);">调用actionSheet</a></br>
-    <a href="javascript:;" class="gotoCapture" onclick="gotoCapture();">扫码</a></br>
+    <a href="javascript:;" class="gotoCapture" onclick="gotoCapture();">扫码跳转</a></br>
+    <a href="javascript:;" class="gotoCapture" onclick="gotoCapture(1);">扫码并返回扫码结果</a></br>
     <a href="javascript:;" class="gotoRenZheng" onclick="gotoRenZheng();">认证</a></br>
 
 
@@ -232,9 +233,11 @@
                                        });
 	}
     
-	function gotoCapture() {
+	function gotoCapture(type) {
+	var data = {};
+        data.type = type;
 	connectWebViewJavascriptBridge(function(bridge){
-                            		bridge.gotoCapture();
+                            		bridge.gotoCapture(JSON.stringify(data));
                                        });
 	}
 	function gotoRenZheng() {
