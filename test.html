@@ -49,6 +49,7 @@
     <a href="javascript:;" class="gotoCapture" onclick="gotoCapture();">扫码跳转</a></br>
     <a href="javascript:;" class="gotoCapture" onclick="gotoCapture(1);">扫码并返回扫码结果</a></br>
     <a href="javascript:;" class="gotoRenZheng" onclick="gotoRenZheng();">认证</a></br>
+    <a href="javascript:;" class="menu" onclick="menuData();">右上角创建menu按钮</a></br>
 
 
 
@@ -254,6 +255,14 @@
 				bridge.showToast("扫码结果: "+result);
 			       });
 	}
+		
+	function menuData(){
+	var menuData = [{imageUrl:"",type:"string",name:"我家",newCount:0,callBackAction:"a"},{imageUrl:"",type:"string",name:"分享",newCount:0,callBackAction:"topicShare"}];
+		connectWebViewJavascriptBridge(function(bridge){
+            bridge.createRightIconButton("menu",JSON.Stringify(menuData),"//static.19louimg.cn/ui/theme18/0328life/images/more.png");           
+	});
+	
+}
 	window.onload = function(){
 // 		var wxData = {};
 // 	connectWebViewJavascriptBridge(function(bridge){
