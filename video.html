@@ -6,25 +6,27 @@
 <meta content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <style>
-  video {
-    height: 100%;
-    width: 100%;
-    display: block;
-  }
+	#video {
+		width: 240px;
+		height: 180px;
+		align-content: center;
+	}
 </style>
 </head>
 <body>
   <div id="videobox"> 
     <video controls="controls" preload="preload" id="video" webkit-playsinline="true" playsinline="true" poster="../Resource/video.png">
       <source src="../Resource/video.mp4" type="video/mp4" />
-    </video>
-    <button id="fullScreenBtn">全屏</button>
+    </video></br>
+    <button id="fullScreenBtn" onclick="fullScreenAction()">全屏</button>
 	</div>
   
-<script type="text/javascript">
-  
+	<script type="text/javascript">
+  		function fullScreenAction() {
 
-</script>
+  		}
+
+	</script>
 </body>
   
 </html>
