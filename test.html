@@ -5,26 +5,24 @@
 <title>全屏问题</title>
 <meta content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<style type="text/css">
- video {
-   position: absolute;
-   width: 320px;
-   height: 240px;
-   object-fit:fill;
+<style>
+
 </style>
 </head>
 <body>
   <div id="videobox"> 
-    <video controls="controls" preload="preload" id="video" webkit-playsinline="true" playsinline="true" poster="../Resource/video.png">
+    <video width="320" height="200" controls="controls" preload="preload" id="video" webkit-playsinline="true" playsinline="true" poster="../Resource/video.png">
       <source src="../Resource/video.mp4" type="video/mp4" />
-    </video>
-    <button id="fullScreenBtn">全屏</button>
+    </video></br>
+    <button id="fullScreenBtn" onclick="fullScreenAction()">全屏</button>
 	</div>
   
-<script type="text/javascript">
-  
+	<script type="text/javascript">
+  		function fullScreenAction() {
 
-</script>
+  		}
+
+	</script>
 </body>
   
 </html>
