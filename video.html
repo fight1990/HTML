@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id="videobox"> 
-    		<video controls="controls" preload="preload" id="video" webkit-playsinline="true" playsinline="true" poster="video.png">
+    		<video autoplay="autoplay" controls="controls" preload="preload" id="video" webkit-playsinline="true" playsinline="true" poster="video.png">
      		 <source src="video.mp4" type="video/mp4" />
     		</video>
     		</br>
@@ -37,12 +37,13 @@
 		
   		function fullScreenAction() {
 			setupWebViewJavascriptBridge(function(bridge) {
-	
+				var video = document.getElementById("video")
+			
 				bridge.registerHandler('JS_Method', function(data, responseCallback) {
 					console.log("JS Echo called with:", data)
 					responseCallback(data)
 				})
-				bridge.callHandler('ObjC_Method', {'url':'https://att2.citysbs.com/hangzhou/2018/03/19/09/090609_v2_14871521421569124_d5d57a88640d92d4e99980f9c7e0abc2.mp4','time':90}, function responseCallback(responseData) {
+				bridge.callHandler('ObjC_Method', {'url':'https://att2.citysbs.com/hangzhou/2018/03/19/09/090609_v2_14871521421569124_d5d57a88640d92d4e99980f9c7e0abc2.mp4','time':video.currentTime}, function responseCallback(responseData) {
 					console.log("JS received response:", responseData)
 				})
 			})
